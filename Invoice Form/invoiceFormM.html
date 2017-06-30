@@ -1,0 +1,38 @@
+<head>
+	
+</head>
+<body>
+	<h1>Add New School Invoice Template</h1>
+	<p>Name: <input type="text" name="name"></p>
+	<p>Description: <input type="text" name="description"></p><br>
+	<section class="addItem">
+	<h3>Item Amount</h3>
+		<p>Name: <input type="text" name="itemNAme"></p>
+		<p>Amount: N<input type="text" name="itemAmt"></p>
+		<p>Is it optional
+		<input list="isOptional" name="isOptional" placeholder="Select if Item is optional">
+			<datalist id="isOptional">
+				<option value="Yes"></option>
+				<option value="No"></option>
+			</datalist>
+		</p>
+		<br>
+	</section>
+	<section>
+		<h3>Publishing</h3>
+		<input list="publish" name="publish" placeholder="Publish this Invoice for">
+			<datalist id="publish">
+				<option value="Student">
+				<option value="Class">
+				<option value="Department">
+				<option value="All Students">
+				<option value="Published Invoices">
+			</datalist>
+			<p>Due Date: <input type="text" name="dueDate"></p>
+			<p>Message: <input type="text" name="message"></p>
+			<div class="field">
+				<button type="submit">Save</button>
+				<button type="publish">Publish</button>
+			</div>
+	</section>
+</body>

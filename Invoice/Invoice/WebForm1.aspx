@@ -9,35 +9,31 @@
 <body>
     <form id="form1" runat="server">
    <h1>Add New School Invoice Template</h1>
-	<p>Name: <input type="text" name="name"/></p>
-	<p>Description: <input type="text" name="description"/></p><br/>
+	<p>Name: 
+        <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
+        </p>
+	<p>Description: <asp:TextBox ID="txtDesc" runat="server" Height="167px" TextMode="MultiLine" Width="329px"></asp:TextBox>
+        </p><br/>
 	<section class="addItem">
 	    <h3>Item Amount</h3>
-		<p>Name: <input type="text" name="itemNAme"/></p>
-		<p>Amount: N<input type="text" name="itemAmt"/></p>
-		<p>Is it optional
-		<input list="isOptional" name="isOptional" placeholder="Select if Item is optional"/>
-			<datalist id="isOptional">
+		<p>Name: 
+            <asp:TextBox ID="txtItemName" runat="server"></asp:TextBox>
+        </p>
+		<p>Amount: N<asp:TextBox ID="txtItemAmt" runat="server"></asp:TextBox>
+        </p>
+		<p>Is it optional:
+            <asp:DropDownList ID="DropDownList1" runat="server">
+                <asp:ListItem>Yes</asp:ListItem>
+                <asp:ListItem>No</asp:ListItem>
+            </asp:DropDownList>
+&nbsp;<datalist id="isOptional">
 				<option value="Yes"></option>
-				<option value="No"></option>
-			</datalist>
-		</p>
+				<option value="No"></option></datalist></p>
 		<br/>
-        <asp:Button Text="Add Item" runat="server" />
+        <asp:Button Text="Add Item" runat="server" ID="btnAddItem" OnClick="btnAddItem_Click" />
 	</section>
         <section>
-            <asp:GridView runat="server">
-                <Columns>
-                    <asp:CheckBoxField />
-                    <asp:TemplateField HeaderText="Option" ShowHeader="False">
-                        <ItemTemplate>
-                            <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Select" Text="Select"></asp:LinkButton>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:CommandField HeaderText="Name" ShowEditButton="True" />
-                    <asp:CommandField HeaderText="Price" ShowEditButton="True" />
-                    <asp:CommandField HeaderText="Quantity" ShowEditButton="True" />
-                </Columns>
+            <asp:GridView runat="server" ID="DTable">
             </asp:GridView>
         </section>
 	<section>
